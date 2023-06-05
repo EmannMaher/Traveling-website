@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root{
+  --blue:#45f3ff;
+}
+*{
+  font-family: 'Nunito', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  outline: none; border:none;
+  text-decoration: none;
+  transition: all .2s linear;
+}
+*::selection{
+  background:var(--blue);
+  color:#fff;
+}
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 6rem;
+  scroll-behavior: smooth;
+}
+section{
+  padding:2rem 9%;
+}
+/******/
+.heading{
+  text-align: center;
+  padding:2.5rem 0
+}
+
+.heading span{
+  font-size: 3.5rem;
+  background:rgba(255, 165, 0,.2);
+  color:var(--orange);
+  border-radius: .5rem;
+  padding:.2rem 1rem;
+}
+
+.heading span.space{
+  background:none;
+}
+/****/
+header{
+  position: fixed;
+  top:0; left: 0; right:0;
+  background:#333;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:2rem 9%;
+}
+header .navbar a{
+  color:#fff;
+  font-size: 2rem;
+  margin:0 .8rem;
+}
+header .navbar a:hover{
+  color:var(--blue);
+}
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    color: #45f3ff;
+    border: 0.2rem solid #45f3ff;
+    border-radius: 5rem;
+    cursor: pointer;
+    background: none;
+}
+.btn:hover{
+    background: #45f3ff;
+    color: #f8f9fc;
+}
+#menu-bar{
+  color:#fff;
+  border:.1rem solid #fff;
+  border-radius: .5rem;
+  font-size: 3rem;
+  padding:.5rem 1.2rem;
+  cursor: pointer;
+  display: none;
+}
+/* media queries  */
+@media (max-width:1200px){
+    html{
+      font-size: 55%;
+    }
+  }
+ @media (max-width:991px){
+    header{
+      padding:2rem;
+    }
+    section{
+      padding:2rem;
+    }
+  }
+@media (max-width:768px){
+    #menu-bar{
+      display: initial;
+    }
+    header .navbar{
+      position: absolute;
+      top:100%; right:0; left: 0;
+      background: #333;
+      border-top: .1rem solid rgba(255,255,255,.2);
+      padding:1rem 2rem;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    header .navbar.active{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    header .navbar a{
+      display: block;
+      border-radius: .5rem;
+      padding:1.5rem;
+      margin:1.5rem 0;    
+      background:#222;
+    }
+  }
+ @media (max-width:450px){
+    html{
+      font-size: 50%;
+    }
+    .heading span{
+      font-size: 2.5rem;
+    }
+    .contact .row form .inputBox input{
+      width:100%;
+    }
+  }
+/***********************************************************************************/
+.home{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  position: relative;
+  z-index: 0;
+}
+.home .content{
+  text-align: center;
+}
+.home .content h3{
+  font-size: 4.5rem;
+  color:#fff;
+  text-transform: uppercase;
+  text-shadow: 0 .3rem .5rem rgba(0,0,0,.1);
+}
+.home .content span{
+    font-weight: bolder;
+    color: transparent;
+    -webkit-text-stroke: 0.1rem #fff;
+    font-size: 4vw;
+    display: block;
+}
+.home .video-container video{
+  position: absolute;
+  top:0; left: 0;
+  z-index: -1;
+  height: 100%;
+  width:100%;
+  object-fit: cover;
+}
+/***********************************************************************************/
+.Popular-Places .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+  }
+  
+  .Popular-Places .box-container .box{
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+    border:1rem solid #fff;
+    border-radius: .5rem;
+    flex:1 1 30rem;
+    height: 25rem;
+    position: relative;
+  }
+  
+  .Popular-Places .box-container .box img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+  }
+  
+  .Popular-Places .box-container .box .content{
+    position: absolute;
+    top:-100%; left:0;
+    height: 100%;
+    width:100%;
+    text-align: center;
+    background:rgba(0,0,0,.7);
+    padding:2rem;
+    padding-top: 2rem;
+  }
+  
+  .Popular-Places .box-container .box:hover .content{
+    top:0;
+  }
+  
+  .Popular-Places .box-container .box .content h3{
+    font-size: 2.5rem;
+    color:var(--orange);
+  }
+  
+  .Popular-Places .box-container .box .content p{
+    font-size: 1.5rem;
+    color:#eee;
+    padding:.5rem 0;
+  }
+/***********************************************************************************/
+.services .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1.5rem;
+}
+
+.services .box-container .box{
+  flex: 1 1 30rem;
+  border-radius: .5rem;
+  padding:1rem;
+  text-align: center;
+}
+
+.services .box-container .box i{
+  padding:1rem;
+  font-size: 5rem;
+  color:var(--orange);
+}
+
+.services .box-container .box h3{
+  font-size: 2.5rem;
+  color:#333;
+}
+
+.services .box-container .box p{
+  font-size: 1.5rem;
+  color:#666;
+  padding:1rem 0;
+  text-align: center;
+}
+
+.services .box-container .box:hover{
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+}
+/***********************************************************************************/
+.rounded-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: auto;
+    margin-top: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.rounded-card:last-of-type {
+    margin-right: 0;
+}
+
+.rounded-card-img {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid #BF915A;
+    box-shadow: 0 5px 7px lightgrey;
+    margin: 0 auto;
+}
+
+.rounded-card-img img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.rounded-card h4 {
+    font-size: 18px;
+    font-weight: 900;
+    margin-top: 15px;
+    color: black;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+@media (max-width: 767px) {
+    .rounded-card h4 {
+        font-size: 16px;
+    }
+}
+
+.where-togo-section_body, .what-todo-section_body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+} 
+
+/***********************************************************************************/
+.images{
+    width: 80%;
+    margin: 100px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(250px,1fr));
+    grid-gap: 30px;
+}
+.card{
+    width: 200px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+}
+h5{
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+}
+.card1{
+    background-image: url(https://egypt.travel//media/1635/seaandsun.jpg);
+}
+.card2{
+    background-image: url(https://egypt.travel//media/1622/culture.jpg);
+}
+.card3{
+    background-image: url(https://egypt.travel//media/1633/nilecruise.jpg);
+}
+.card4{
+    background-image: url(https://egypt.travel//media/1631/nature.jpg);
+}
+
+.card6{
+    background-image: url(https://egypt.travel//media/1621/adventure.jpg);
+}
+
+.card8{
+    background-image: url(https://egypt.travel//media/1636/spa.jpg);
+}
+
+.card:hover{
+    transform: translatex(-20px);
+}
+/***********************************************************************************/
+
+.review .review-slider{
+  padding-bottom: 2rem;
+}
+
+.review .box{
+  padding:2rem;
+  text-align: center;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+  border-radius: .5rem;
+}
+
+.review .box img{
+  height:13rem;
+  width:13rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.review .box h3{
+  color:#333;
+  font-size: 2.5rem;
+}
+
+.review .box p{
+  color:#666;
+  font-size: 1.5rem;
+  padding:1rem 0;
+}
+
+.review .box .stars i{
+  color:var(--blue);
+  font-size: 1.7rem;
+}
+/***********************************************************************************/
+.footer{
+  background:#333;
+}
+
+.footer .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1.5rem;
+}
+
+.footer .box-container .box{
+  padding:1rem 0;
+  flex:1 1 25rem;
+}
+
+.footer .box-container .box h3{
+  font-size: 2.5rem;
+  padding:.7rem 0;
+  color:#fff;
+}
+
+.footer .box-container .box p{
+  font-size: 1.5rem;
+  padding:.7rem 0;
+  color:#eee;
+}
+
+.footer .box-container .box a{
+  display: block;
+  font-size: 1.5rem;
+  padding:.7rem 0;
+  color:#eee;
+}
+
+.footer .box-container .box a:hover{
+  color:var(--orange);
+  text-decoration: underline;
+}
+
+.footer .credit{
+  text-align: center;
+  padding:2rem 1rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: normal;
+  color:#fff;
+  border-top: .1rem solid rgba(255,255,255,.2);
+}
+
+.footer .credit span{
+  color:var(--orange);
+}
+
+
+
+    </style>
+
+</head>
+<body>
+    
+<!---------------------------------- header----------------------------->
+<header>
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+    <a href="#"  class="logo"><img src="https://www.tripsinegypt.com/wp-content/uploads/2020/04/Trips-in-Egypt-Logo-1.png" width="50" height="40" ></a>
+    <nav class="navbar">
+        <a href="#" >Home</a>
+        <a href="About Us.html" >About us</a>
+        <a href="Trips.php" >Trips</a>
+        <a href="toursTickets.html" >Tours & Tickets</a>
+        <a href="SpecialGroup.php" >Special Group</a>
+        <a href="profile.php" >Profile</a>
+    </nav>
+    <a href="FirstPage.html" class="btn">Log out</a>
+
+</header>
+
+<!-------------------------------home------------------------------------->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <span>Let's start</span>
+        <h3>Egypt Tour With Us</h3>
+    </div>
+
+    <div class="video-container">
+        <video src="images/vid-2.mp4" id="video-slider" loop autoplay muted></video>
+    </div>
+
+</section>
+
+
+<!---------------------------Popular-Places--------------------------------->
+
+<section class="Popular-Places" id="Popular-Places">
+
+    <h1 class="heading">       
+        <span>p</span>
+        <span>o</span>
+        <span>p</span>
+        <span>u</span>
+        <span>l</span>
+        <span>a</span>
+        <span>r</span>
+        <span class="space"></span>
+        <span>p</span>
+        <span>l</span>
+        <span>a</span>
+        <span>c</span>
+        <span>e</span>
+        <span>s</span>
+    </h1>
+
+    <div class="box-container">
+        
+        <div class="box">
+            <img src="https://www.egypttoday.com/siteimages/Larg/202104060425572557.jpg" alt="">
+            <div class="content">
+                <h3>The Egyptian Museum</h3>
+                <p> The Museum of Egyptian Antiquities is home to an extensive of ancient Egyptian. </p>
+                <p class="egy-place-card_body_location"><i class="fas fa-map-marker-alt"></i> Egypt, Cairo </p>
+                <a href="https://egymonuments.gov.eg/en/museums/egyptian-museum" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="https://www.planetware.com/photos-large/EGY/egypt-abu-simbel-temple.jpg" alt="">
+            <div class="content">
+                <h3>Abu Simbel Temples</h3>
+                <p>This is Ramses II's great temple, adorned with colossal statuary standing guard outside.</p>
+                <p class="egy-place-card_body_location"><i class="fas fa-map-marker-alt"></i> Egypt, Aswan </p>
+                <a href="https://en.wikipedia.org/wiki/Abu_Simbel" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="https://www.touropia.com/gfx/d/rock-cut-tombs-and-temples/valley_of_the_kings.jpg" alt="">
+            <div class="content">
+                <h3>Valley of the Kings</h3>
+                <p>The Valley of the Kings is where tombs were constructed for the kings and privileged nobles of the New Kingdom.</p>
+                <p class="egy-place-card_body_location"><i class="fas fa-map-marker-alt"></i> Egypt, Cairo </p>
+                <a href="https://en.wikipedia.org/wiki/Valley_of_the_Kings" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="https://globalgrasshopper.com/wp-content/uploads/2011/10/Saint-Catherines-Monastery.jpg" alt="">
+            <div class="content">
+                <h3>St. Catherine's Monastery</h3>
+                <p> One of the oldest monasteries in the world.</p>
+                <p class="egy-place-card_body_location"><i class="fas fa-map-marker-alt"></i> Egypt, Sinai </p>
+                <a href="https://en.wikipedia.org/wiki/Saint_Catherine,_Egypt" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="https://globalgrasshopper.com/wp-content/uploads/2011/10/White-Desert-Egypt.jpg" alt="">
+            <div class="content">
+                <h3>White Desert</h3>
+                <p>It has an otherworldly beauty with bizarre.</p>
+                <p class="egy-place-card_body_location"><i class="fas fa-map-marker-alt"></i> Egypt, Al-Farafra</p>
+                <a href="https://en.wikipedia.org/wiki/Farafra,_Egypt" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="https://www.touropia.com/gfx/d/ancient-egyptian-temples/karnak.jpg" alt="">
+            <div class="content">
+                <h3>Karnak</h3>
+                <p> It represents the combined achievement of many generations of Egyptian builders.</p>
+                <p class="egy-place-card_body_location"><i class="fas fa-map-marker-alt"></i> Egypt, Luxor</p>
+                <a href="https://en.wikipedia.org/wiki/Karnak" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="https://globalgrasshopper.com/wp-content/uploads/2011/10/Taba.jpg" alt="">
+            <div class="content">
+                <h3>The Fjord Bay (Taba)</h3>
+                <p> It includes Red Sea Water World Taba Heights, Castle Zaman and Canyon Motor Sports.</p>
+                <p class="egy-place-card_body_location"><i class="fas fa-map-marker-alt"></i> Egypt, Sinai</p>
+                <a href="https://www.egypttoday.com/Article/6/19114/Have-you-been-to-Fjord-Bay-yet" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="https://media.tacdn.com/media/attractions-splice-spp-360x240/09/35/3d/ec.jpg" alt="">
+            <div class="content">
+                <h3>Salah Al-Din Al-Ayoubi Castle</h3>
+                <p>A medieval Islamic-era fortification in Cairo.</p>
+                <p class="egy-place-card_body_location"><i class="fas fa-map-marker-alt"></i> Egypt, Cairo</p>
+                <a href="https://en.wikipedia.org/wiki/Cairo_Citadel" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/All_Gizah_Pyramids.jpg/290px-All_Gizah_Pyramids.jpg" alt="">
+            <div class="content">
+                <h3>Giza Pyramids</h3>
+                <p>ancient masonry structures located in Egypt.</p>
+                <p class="egy-place-card_body_location"><i class="fas fa-map-marker-alt"></i> Egypt, Cairo</p>
+                <a href="https://en.wikipedia.org/wiki/Egyptian_pyramids" class="btn">see more</a>
+            </div>
+        </div>
+        
+    </div>
+
+</section>
+
+
+
+<!------------------------services-------------------------------------------->
+
+<section class="services" id="services">
+
+    <h1 class="heading">
+        <span>s</span>
+        <span>e</span>
+        <span>r</span>
+        <span>v</span>
+        <span>i</span>
+        <span>c</span>
+        <span>e</span>
+        <span>s</span>
+    </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-hotel"></i>
+            <h3>affordable hotels</h3>
+            <p>Finding a hotel with a better price for your next trip.Hotel bookings are supported by our secure online booking system.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-utensils"></i>
+            <h3>food and drinks</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore commodi earum, quis voluptate exercitationem ut minima itaque iusto ipsum corrupti!</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-bullhorn"></i>
+            <h3>safty guide</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore commodi earum, quis voluptate exercitationem ut minima itaque iusto ipsum corrupti!</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-plane"></i>
+            <h3>fastest travel</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore commodi earum, quis voluptate exercitationem ut minima itaque iusto ipsum corrupti!</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-hiking"></i>
+            <h3>adventures</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore commodi earum, quis voluptate exercitationem ut minima itaque iusto ipsum corrupti!</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!----------------------------Where To Go in Egypt------------------------------>
+
+<section class="Where To Go in Egypt" id="Where To Go in Egypt">
+
+    <h1 class="heading">
+        <span>w</span>
+        <span>h</span>
+        <span>e</span>
+        <span>r</span>
+        <span>e</span>
+        <span class="space"></span>
+        <span>t</span>
+        <span>o</span>
+        <span class="space"></span>
+        <span>g</span>
+        <span>o</span>
+        <span class="space"></span>
+        <span>i</span>
+        <span>n</span>
+        <span class="space"></span>
+        <span>e</span>
+        <span>g</span>
+        <span>y</span>
+        <span>p</span>
+        <span>t</span>
+    </h1>
+
+    <div class="box-container">
+
+        <div class="where-togo-section_body">
+            <a class="rounded-card" href="https://egypt.travel//en/regions/the-nile/cairo" target="_blank">
+                <div>
+                    <div class="rounded-card-img">
+                        <img src="https://egypt.travel//media/1002/cairo-view-from-cairo-tower-3.jpg" alt="cairo"/>
+                    </div>
+                    <h4>Cairo</h4>
+                </div>
+            </a>
+            <a class="rounded-card" href="https://egypt.travel//en/regions/the-red-sea/el-gouna" target="_blank">
+                <div>
+                    <div class="rounded-card-img">
+                        <img src="https://egypt.travel//media/1005/el-gouna-golf-and-view.jpg" alt="cairo"/>
+                    </div>
+                    <h4>EL Gouna</h4>
+                </div>
+            </a>
+            <a class="rounded-card" href="https://egypt.travel//en/regions/the-nile/aswan" target="_blank">
+                <div>
+                    <div class="rounded-card-img">
+                        <img src="https://egypt.travel//media/1659/aswan-felucca-on-the-nile.jpg" alt="cairo"/>
+                    </div>
+                    <h4>Aswan</h4>
+                </div>
+  
+            </a>
+            <a class="rounded-card" href="https://egypt.travel//en/regions/the-red-sea/hurghada-city" target="_blank">
+                <div>
+                    <div class="rounded-card-img">
+                        <img src="https://egypt.travel//media/1006/hurghada-coral-reef.jpg" alt="cairo"/>
+                    </div>
+                    <h4>Hurghada</h4>
+                </div>
+  
+            </a>
+            <a class="rounded-card" href="https://egypt.travel//en/regions/the-red-sea/marsa-alam" target="_blank">
+                <div>
+                    <div class="rounded-card-img">
+                        <img src="https://egypt.travel//media/1008/marsa-alam.jpg" alt="cairo"/>
+                    </div>
+                    <h4>Marsa Alam</h4>
+                </div>
+  
+            </a>
+            <a class="rounded-card" href="https://egypt.travel//en/regions/the-red-sea/sharm-el-sheikh" target="_blank">
+                <div>
+                    <div class="rounded-card-img">
+                        <img src="https://egypt.travel//media/1012/sharm_generic.jpg" alt="cairo"/>
+                    </div>
+                    <h4>Sharm El Sheikh</h4>
+                </div>
+  
+            </a>
+  
+            <a class="rounded-card" href="https://egypt.travel//en/regions/the-med/alexandria" target="_blank">
+                <div>
+                <div class="rounded-card-img">
+                    <img src="https://egypt.travel//media/1015/alexandria-sea-front-3.jpg" alt="cairo"/>
+                </div>
+                <h4>Alexandria</h4>
+            </div></a>
+  
+            <a class="rounded-card" href="https://egypt.travel//en/regions/the-deserts/siwa-oasis" target="_blank">
+                <div>
+                <div class="rounded-card-img">
+                    <img src="https://egypt.travel//media/1024/ash-003.jpg" alt="cairo"/>
+                </div>
+                <h4>Siwa Oasis</h4>
+            </div></a>
+  
+            <a class="rounded-card" href="https://egypt.travel//en/regions/the-nile/luxor" target="_blank">
+                <div>
+                <div class="rounded-card-img">
+                    <img src="https://egypt.travel//media/1003/luxor-temple-and-corniche.jpg" alt="cairo"/>
+                </div>
+                <h4>Luxor</h4>
+            </div></a>
+        </div>
+
+    </div>
+
+</section>
+
+<!----------------------------------What To do in Egypt-------------------------------------------->
+<section class="Where To do in Egypt" id="Where To do in Egypt">
+
+    <h1 class="heading">
+        <span>w</span>
+        <span>h</span>
+        <span>a</span>
+        <span>t</span>
+        <span class="space"></span>
+        <span>t</span>
+        <span>o</span>
+        <span class="space"></span>
+        <span>d</span>
+        <span>o</span>
+        <span class="space"></span>
+        <span>i</span>
+        <span>n</span>
+        <span class="space"></span>
+        <span>e</span>
+        <span>g</span>
+        <span>y</span>
+        <span>p</span>
+        <span>t</span>
+    </h1>
+
+    <div class="images">
+
+           <div class="card card1">
+            <h5>Sun & Sea</h5>
+           </div>
+      
+      
+           <div class="card card2">
+            <h5>Culture and Historical Sites</h5>
+           </div>
+      
+      
+           <div class="card card3">
+            <h5>Nile Cruise</h5>
+           </div>
+      
+      
+      
+           <div class="card card4">
+            <h5>Ecotourism and nature</h5>
+           </div>
+      
+      
+      
+      
+      
+           <div class="card card6">
+            <h5>Adventure</h5>
+           </div>
+      
+      
+      
+      
+           <div class="card card8">
+            <h5>SPA</h5>
+           </div>
+      
+      
+      
+          </div> 
+    
+
+</section>
+<!--------------------------------review---------------------------------------------->
+
+<section class="review" id="review">
+
+    <h1 class="heading">
+        <span>r</span>
+        <span>e</span>
+        <span>v</span>
+        <span>i</span>
+        <span>e</span>
+        <span>w</span>
+    </h1>
+
+    <div class="swiper-container review-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="images/marym.jpeg" alt="">
+                    <h3>Marym</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="images/nana.jpeg" alt="">
+                    <h3>Maryhan</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="images/ranoud.jpeg" alt="">
+                    <h3>Ranoud</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+          
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!---------------------------------footer---------------------------------------------->
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>Features</h3>
+            <p>Deals & Offers</p>
+            <p>Customer Reviews</p>
+            <p>Cancelation Policy</p>
+        </div>
+
+        <div class="box">
+            <h3>Quick Contact</h3>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+              </svg> 01222940939</p>
+             <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+              </svg> AAST AbuQir</p>
+        </div>
+
+        
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="https://www.facebook.com/eman.maher.7773/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+            </svg><i>  Facebook</i></a><br>
+            <a href="https://twitter.com/emaherrrr/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+            </svg><i> Twitter</i></a><br>
+            <a href="https://www.instagram.com/emannmaherr/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+            </svg><i> Instagram </i></a><br>  
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!---------------------------------java sccript-------------------------------------->
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script type="text/javascript">
+      
+      let menu = document.querySelector('#menu-bar');
+      let navbar = document.querySelector('.navbar');
+      
+      menu.addEventListener('click', () =>{
+           menu.classList.toggle('fa-times');
+           navbar.classList.toggle('active');
+       });
+
+       
+var swiper = new Swiper(".review-slider", {
+    spaceBetween: 20,
+    loop:true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    breakpoints: {
+        640: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+    },
+});
+
+var swiper = new Swiper(".brand-slider", {
+    spaceBetween: 20,
+    loop:true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    breakpoints: {
+        450: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        991: {
+          slidesPerView: 4,
+        },
+        1200: {
+          slidesPerView: 5,
+        },
+      },
+});
+
+
+
+</script>
+
+
+</body>
+</html> 
+ 
